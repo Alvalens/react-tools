@@ -1,0 +1,20 @@
+/* style navbar */
+.navbar {
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.navbar li {
+    float: left;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+}

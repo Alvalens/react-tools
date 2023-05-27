@@ -11,17 +11,21 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+  .App-logo-rev {
+    animation: App-logo-spin-reverse infinite 20s linear !important;
+    -webkit-animation: App-logo-spin-reverse infinite 20s linear !important;
+}
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .App-link {
@@ -34,5 +38,15 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* app logo reverse */
+@keyframes App-logo-spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
   }
 }
