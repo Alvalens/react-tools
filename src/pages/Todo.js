@@ -48,7 +48,7 @@ function Todo() {
 		cancelHandler();
 	}
 
-	function edithandler(Todo) {
+	function editHandler(Todo) {
 		setActivity(Todo.activity)
 		setEdit(Todo)
 	}
@@ -60,40 +60,55 @@ function Todo() {
 	}
 
 	return (
-		<div>
-			<h1>Todo List</h1>
-			{msg ? <p>{msg}</p> : ''}
-			<form onSubmit={handleSubmit}>
+		<div className="p-4 grid place-content-center min-h-screen">
+			<h1 className="text-2xl font-bold mb-4">Todo List</h1>
+			{msg && <p>{msg}</p>}
+			<form
+				className="mb-4"
+				onSubmit={handleSubmit}>
 				<input
 					type="text"
-					name=""
-					id=""
 					value={activity}
 					placeholder="aktivitas"
-					onChange={function (e) {
-						setActivity(e.target.value);
-					}}
+					onChange={(e) => setActivity(e.target.value)}
+					className="border border-gray-400 p-2 rounded"
 				/>
-				<button type="submit">
-				{edit.id ? 'simpan' : 'tambah'}</button>
-				{edit.id ? <button onClick={cancelHandler}>cancel</button> : ''}
+				<button
+					type="submit"
+					className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-2 rounded">
+					{edit.id ? "Simpan" : "Tambah"}
+				</button>
+				{edit.id && (
+					<button
+						onClick={cancelHandler}
+						className="bg-gray-400 hover:bg-gray-600 text-white font-bold py-2 px-4 ml-2 rounded">
+						Cancel
+					</button>
+				)}
 			</form>
-			{todos.length === 0 ? <p>tidak ada data</p> : 
-			
-			<ul>
-				{todos.map(function (todo) {
-					return (
-						<li key={todo.id}>
-							{todo.activity}
-							<button onClick={edithandler.bind(this, todo)}>U</button>
-							<button onClick={removeHandler.bind(this, todo.id)}>
+			{todos.length === 0 ? (
+				<p>Tidak ada data</p>
+			) : (
+				<ul>
+					{todos.map((todo) => (
+						<li
+							key={todo.id}
+							className="flex items-center mb-2">
+							<span className="flex-grow">{todo.activity}</span>
+							<button
+								onClick={() => editHandler(todo)}
+								className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2">
+								U
+							</button>
+							<button
+								onClick={() => removeHandler(todo.id)}
+								className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
 								X
 							</button>
 						</li>
-					);
-				})}
-			</ul>
-			}
+					))}
+				</ul>
+			)}
 		</div>
 	);
 }
