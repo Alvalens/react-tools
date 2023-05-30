@@ -1,12 +1,20 @@
 import '../css/Navbar.css'
 function Navbar(props) {
 	return (
-		<div className='navbar'>
+		<div className="navbar">
 			<ul>
-				<li><a href="#"></a>Home</li>
-				<li><a href="#"></a>About</li>
-				<li><a href="#"></a>Profile</li>
-				<li><a href="#"></a> {props.tes} </li>
+				<li>
+					<a href="/">Home</a>
+				</li>
+				<li>
+					<a href="/about">About</a>
+				</li>
+				<li>
+					<a href="/#">Profile</a>
+				</li>
+				<li>
+					<a href="/#"> {props.tes} </a>
+				</li>
 			</ul>
 		</div>
 	);
