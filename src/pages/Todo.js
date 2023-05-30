@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "../App.css";
+
 function Todo() {
 	const [activity, setActivity] = useState("");
 	const [edit, setEdit] = useState(''); 

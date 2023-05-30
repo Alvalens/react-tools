@@ -1,7 +1,7 @@
 import logo from "../logo.svg";
 import "../App.css";
 import Button from "../components/myButton";
-import Navbar from "../components/Navbar";
+
 import Footer from "../components/Footer";
 function Home() {
     function handleClick() {
@@ -9,7 +9,6 @@ function Home() {
 		logo.classList.toggle("App-logo-rev");
 	}
 
-	const navText = "navbar";
 	const clicked = () => {
 		alert("clicked");
 	};
@@ -19,7 +18,6 @@ function Home() {
 	return (
 		<div className="App">
 			<header className="App-header">
-				<Navbar tes={navText} />
 				<img
 					src={logo}
 					className="App-logo"
