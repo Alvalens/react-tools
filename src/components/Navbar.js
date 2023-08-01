@@ -1,8 +1,15 @@
 import '../css/Navbar.css'
 
 const Navbar = () => {
+
+	// show and hide the navigation links when the hamburger icon is clicked
+	function showNav() {
+		const navLinks = document.getElementById("nav-links");
+		navLinks.classList.toggle("show");
+	}
+
 	return (
-		<nav className="bg-gray-800 fixed w-screen">
+		<nav className="bg-gray-800 fixed w-screen z-50 ">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex items-center justify-between h-16">
 					{/* Logo or site title */}
@@ -34,8 +41,10 @@ const Navbar = () => {
 					</div>
 
 					{/* Responsive Menu */}
-					<div className="md:hidden ">
+					<div className=" md:hidden ">
 						<button
+							id="nav-toggle"
+							onClick={showNav}
 							className="text-gray-400 hover:text-white focus:outline-none focus:text-white"
 							aria-label="Toggle navigation">
 							<svg
@@ -56,7 +65,9 @@ const Navbar = () => {
 				</div>
 
 				{/* Responsive Navigation */}
-				<div className="md:hidden">
+				<div
+					id="nav-links"
+					className="">
 					<div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
 						<a
 							href="/"

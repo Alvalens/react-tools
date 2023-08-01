@@ -6,11 +6,11 @@ function About() {
 		<div className="container p-10 mx-auto min-h-screen flex flex-col justify-center items-center">
 			<div className="grid grid-cols-1 ">
 				{/* about */}
-				<div className="text-4xl font-bold text-center me-20">
+				<div className="text-4xl font-bold text-center mx-10">
 					<h1>About this project</h1>
 				</div>
 			</div>
-			<div className="grid grid-cols-1 md:grid-cols-2 p-10">
+			<div className="grid grid-cols-1 md:grid-cols-2">
 				<div className="flex justify-center items-center md:order-2">
 					<img
 						src={logo}
@@ -18,7 +18,7 @@ function About() {
 						alt="logo"
 					/>
 				</div>
-				<div className="text-xl flex justify-center flex-col items-center text-justify md:order-1">
+				<div className="text-xl flex justify-center flex-col items-center text-justify md:order-1 md:p-10">
 					<p>
 						This is a simple todo list app made with React.js. It's
 						not a perfect app, but it's a good starting point for
