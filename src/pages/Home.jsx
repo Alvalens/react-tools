@@ -10,7 +10,7 @@ function Home() {
 		<div className="App">
 			<header className="App-header">
 				{/* divide to 2 section on md upper and 1 section in md below */}
-				<div className="container mx-auto px-0 grid grid-cols-1 md:grid-cols-2 md:px-4 min-h-screen">
+				<div className="container mx-auto px-0 grid grid-cols-1 md:grid-cols-2 md:px-4 min-h-screen mt-14 mt-sm-0">
 					<div className="flex justify-center items-center md:order-2">
 						<img
 							src={logo}
@@ -59,13 +59,13 @@ function Home() {
 					</div>
 					<div className="container mx-auto px-0 grid grid-cols-1 md:grid-cols-3 md:px-4">
 						{/* 3 card with fontawsome as main image */}
-						<div className="flex justify-center items-center">
-							<div
-								className="bg-white rounded-lg shadow-xl p-5"
-								style={{ minWidth: "390px" }}>
+						<a
+							href="todo"
+							className="flex justify-center items-center hover:scale-105 transition-transform mx-4">
+							<div className="bg-white rounded-lg shadow-xl p-5 min-w-full">
 								<div className="flex justify-center items-center">
 									<div className="bg-blue-500 rounded-full p-8">
-										<i className="fas fa-clipboard-list text-white fa-4x"></i>
+										<i className="fas fa-clipboard-list text-white fa-4x mx-2 md:mx-4"></i>
 									</div>
 									<div className="flex flex-col justify-center items-center ml-5">
 										<h1 className="text-2xl font-bold">
@@ -77,15 +77,15 @@ function Home() {
 									</div>
 								</div>
 							</div>
-						</div>
+						</a>
 
-						<div className="flex justify-center items-center">
-							<div
-								className="bg-white rounded-lg shadow-xl p-5"
-								style={{ minWidth: "390px" }}>
-								<div className="flex justify-center items-center">
+						<a
+							href="note"
+							className="flex justify-center items-center hover:scale-105 transition-transform mx-4">
+							<div className="bg-white rounded-lg shadow-xl p-5 min-w-full">
+								<div className="flex justify-between md:justify-center items-center">
 									<div className="bg-blue-500 rounded-full p-8">
-										<i className="fas fa-sticky-note text-white fa-4x"></i>
+										<i className="fas fa-sticky-note text-white fa-4x mx-1 md:mx-2"></i>
 									</div>
 									<div className="flex flex-col justify-center items-center ml-5">
 										<h1 className="text-2xl font-bold">
@@ -97,15 +97,15 @@ function Home() {
 									</div>
 								</div>
 							</div>
-						</div>
+						</a>
 
-						<div className="flex justify-center items-center">
-							<div
-								className="bg-white rounded-lg shadow-xl p-5"
-								style={{ minWidth: "390px" }}>
+						<a
+							href="expense-tracker"
+							className="flex justify-center items-center hover:scale-105 transition-transform mx-4">
+							<div className="bg-white rounded-lg shadow-xl p-5 min-w-full">
 								<div className="flex justify-center items-center">
 									<div className="bg-blue-500 rounded-full p-8">
-										<i className="fas fa-money-bill-wave text-white fa-4x"></i>
+										<i className="fa-solid fa-coins text-white fa-4x"></i>
 									</div>
 									<div className="flex flex-col justify-center items-center ml-5">
 										<h1 className="text-2xl font-bold">
@@ -117,7 +117,7 @@ function Home() {
 									</div>
 								</div>
 							</div>
-						</div>
+						</a>
 					</div>
 				</div>
 			</header>
