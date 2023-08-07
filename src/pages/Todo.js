@@ -70,7 +70,7 @@ function Todo() {
 	}
 
 	return (
-		<div className="p-4 pt-28">
+		<div className="p-4 pt-28" style={{ minHeight:"72vh" }}>
 			<div className="container mx-auto px-0 min-h-full min-w-full grid grid-cols-1 md:grid-cols-2">
 				<div className="flex justify-start flex-col items-center min-w-full">
 					<h1 className="text-2xl font-bold mb-4">Todo List</h1>

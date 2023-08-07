@@ -1,7 +1,6 @@
-import '../css/Navbar.css'
+import "../css/Navbar.css";
 
 const Navbar = () => {
-
 	// show and hide the navigation links when the hamburger icon is clicked
 	function showNav() {
 		const navLinks = document.getElementById("nav-links");
@@ -13,9 +12,13 @@ const Navbar = () => {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex items-center justify-between h-16">
 					{/* Logo or site title */}
-					<div className="flex-shrink-0">
+					<div className="flex items-center justify-center">
+						{/* icon */}
+						<div className="icon">
+							<i className="fa-brands fa-react fa-3x mr-5 text-white"></i>
+						</div>
 						<span className="text-white font-bold text-xl">
-							My Website
+							React Tools
 						</span>
 					</div>
 
@@ -75,9 +78,7 @@ const Navbar = () => {
 				</div>
 
 				{/* Responsive Navigation */}
-				<div
-					id="nav-links"
-					className="">
+				<div id="nav-links" className="">
 					<div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
 						<a
 							href="/"

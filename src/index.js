@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+	const year = new Date().getFullYear();
 root.render(
   <React.StrictMode>
     <Navbar />
     <App />
+    <Footer var={year} />
   </React.StrictMode>
 );
 

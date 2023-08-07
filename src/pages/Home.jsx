@@ -1,11 +1,8 @@
 import logo from "../logo.svg";
 import "../App.css";
 
-import Footer from "../components/Footer";
+
 function Home() {
-	const foo = () => {
-		return <i> ini footer</i>;
-	};
 	return (
 		<div className="App">
 			<header className="App-header">
@@ -121,7 +118,7 @@ function Home() {
 					</div>
 				</div>
 			</header>
-			<Footer var={foo} />
+
 		</div>
 	);
 }
