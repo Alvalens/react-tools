@@ -1,5 +1,6 @@
 import logo from "../logo.svg";
 import "../App.css";
+import Button from "../components/Button";
 
 
 function Home() {
@@ -48,14 +49,12 @@ function Home() {
 						</div>
 					</div>
 				</div>
-				{/* divide to 3 section on md upper and 1 section in md below */}
+				{/* tools */}
 				<div className="container mx-auto px-0 md:px-4 py-10 my-10">
-					{/* main title */}
 					<div className="text-4xl font-bold text-center mx-10 pb-10">
 						<h1>Tools</h1>
 					</div>
 					<div className="container mx-auto px-0 grid grid-cols-1 md:grid-cols-3 md:px-4">
-						{/* 3 card with fontawsome as main image */}
 						<a
 							href="todo"
 							className="flex justify-center items-center hover:scale-105 transition-transform mx-4">
@@ -84,7 +83,7 @@ function Home() {
 									<div className="bg-blue-500 rounded-full p-8">
 										<i className="fas fa-sticky-note text-white fa-4x mx-1 md:mx-2"></i>
 									</div>
-									<div className="flex flex-col justify-center items-center ml-5">
+									<div className="flex flex-col justify-center items-center mr-8 sm:mr-0 sm:ml-5">
 										<h1 className="text-2xl font-bold">
 											Note
 										</h1>
@@ -117,8 +116,47 @@ function Home() {
 						</a>
 					</div>
 				</div>
+				{/* contact */}
+				<div className="container mx-auto px-0 md:px-4 py-10 my-10">
+					<div className="text-4xl font-bold text-center mx-10 pb-10">
+						<h1>Contact me</h1>
+					</div>
+					<div className="container mx-auto px-4">
+						{/* email */}
+						<Button
+							icon="fa-solid fa-envelope"
+							link="mailto:Alvalen.shafel04@gmail.com?subject=Hello&body=Hello">
+							Email
+						</Button>
+						{/* github */}
+						<Button
+							icon="fa-brands fa-github"
+							link="https:github.com/Alvalens">
+							Github
+						</Button>
+						{/* linkedin */}
+						<Button
+							icon="fa-brands fa-linkedin"
+							link="https://www.linkedin.com/in/alvalen-shafel-8a081a254/">
+							Linkedin
+						</Button>
+						{/* instagram */}
+						<Button
+							icon="fa-brands fa-instagram"
+							link="https://instagram.com/alvalens_">
+							Instagram
+						</Button>
+						{/* discord */}
+						<Button
+							icon="fa-brands fa-discord"
+							link="https://discordapp.com/users/bloody#6118">
+							Discord
+						</Button>
+					</div>
+				</div>
+				{/* quote */}
+				<div className="container mx-auto px-0 md:px-4 py-10 my-10"></div>
 			</header>
-
 		</div>
 	);
 }
