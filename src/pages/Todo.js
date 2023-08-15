@@ -70,7 +70,7 @@ function Todo() {
 	}
 
 	return (
-		<div className="p-4 pt-28" style={{ minHeight:"72vh" }}>
+		<div className="p-4 pt-28" style={{ minHeight: "72vh" }}>
 			<div className="container mx-auto px-0 min-h-full min-w-full grid grid-cols-1 md:grid-cols-2">
 				<div className="flex justify-start flex-col items-center min-w-full">
 					<h1 className="text-2xl font-bold mb-4">Todo List</h1>
@@ -113,7 +113,7 @@ function Todo() {
 					{todos.length === 0 ? (
 						<p>Tidak ada data</p>
 					) : (
-						<ul className="min-w-full md:ps-10">
+						<ul className="todo-list min-w-full md:ps-10 overflow-y-scroll max-h-[44rem] md:max-h-[50rem]">
 							{todos.map((todo) => (
 								<li
 									key={todo.id}

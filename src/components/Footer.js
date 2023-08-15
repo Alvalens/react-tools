@@ -7,7 +7,7 @@ class Footer extends React.Component {
 				<div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
 					<div className="sm:flex sm:items-center sm:justify-between">
 						<a href="/" className="flex items-center mb-4 sm:mb-0">
-							<i className="fa-brands fa-react fa-3x mr-5"></i>
+							<i className="fa-brands fa-react fa-3x mr-5 dark:text-white"></i>
 							<span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
 								React Tools
 							</span>
