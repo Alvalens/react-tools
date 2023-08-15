@@ -64,8 +64,7 @@ function Note() {
 					<p className="hidden md:block lg:px-24 md:px-10 pb-5 text-gray-700">
 						You can add notes by clicking this green button, the
 						notes will automaticly saved. You can also delete the
-						notes one by one by clicking the trash icon in each note or just clear all the notes by clicking the red
-						button below.
+						notes one by one by clicking the trash icon in each note or just clear all the notes by clicking the red button below.
 					</p>
 					<div className="buttons">
 						<button

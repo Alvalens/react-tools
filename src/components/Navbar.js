@@ -95,6 +95,16 @@ const Navbar = () => {
 							className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
 							Todo
 						</a>
+						<a
+							href="/note"
+							className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+							Note
+						</a>
+						<a
+							href="/expense-tracker"
+							className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+							Expense Tracker
+						</a>
 					</div>
 				</div>
 			</div>

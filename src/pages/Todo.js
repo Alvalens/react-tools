@@ -121,7 +121,7 @@ function Todo() {
 										{todo.activity}
 									</span>
 									<div
-										className="buttons"
+										className="buttons text-end"
 										style={{ minWidth: "100px" }}>
 										<button
 											onClick={() => editHandler(todo)}
