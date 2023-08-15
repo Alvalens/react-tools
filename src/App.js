@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import Todo from './pages/Todo';
 import Note from './pages/Note';
+import Expense from './pages/Expense';
 import Page404 from './pages/404';
 
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/todo" element={<Todo />} />
         <Route path="/Note" element={<Note />} />
+        <Route path="/Expense-tracker" element={<Expense />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </Router>

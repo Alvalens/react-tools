@@ -5,7 +5,6 @@ import "../css/Navbar.css";
 
 function Note() {
 	const [notes, setNotes] = useState(
-		// take notes from local storage
 		JSON.parse(localStorage.getItem("notes")) || []
 	);
 
@@ -94,11 +93,11 @@ function Note() {
 									className={`note-card shadow-md mb-4 p-2 border rounded min-w-full ${note.color} `}>
 									<div className="flex justify-between items-center">
 										<div className="buttons max-w-[4rem]">
-											<button
+											<button className="bg-red-400 rounded py-4 px-1  hover:bg-red-700 mr-2 focus:outline-none focus:ring-2 focus:ring-red-100"
 												onClick={() =>
 													deleteNote(index)
 												}>
-												<i className="fa-solid fa-trash text-red-500 pl-2 pr-4"></i>
+												<i className="fa-solid fa-trash text-white px-2"></i>
 											</button>
 										</div>
 										<div className="text flex-grow">
