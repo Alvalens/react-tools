@@ -127,7 +127,7 @@ function Expense() {
 	const modalEdit = useModal();
 
 	return (
-		<div className="p-4 pt-28" style={{ minHeight: "72vh" }}>
+		<div className="p-4 pt-28" style={{ minHeight: "75vh" }}>
 			<div className="container mx-auto px-0 min-h-full min-w-full grid grid-cols-1 md:grid-cols-2">
 				<div className="flex justify-start flex-col items-center min-w-full px-4 md:px-24">
 					<h1 className="text-2xl font-bold mb-4">Expense Tracker</h1>
@@ -159,12 +159,12 @@ function Expense() {
 					<div className="buttons">
 						{/* modal btn */}
 						<button
-							className="bg-green-500 text-white px-4 py-2 rounded mb-4 mr-4"
+							className="bg-green-500 text-white px-4 py-2 rounded mb-4 mr-4 hover:bg-green-700"
 							onClick={modalIncome.openModal}>
 							Add Income
 						</button>
 						<button
-							className="bg-red-500 text-white px-4 py-2 rounded mb-4 mr-4"
+							className="bg-red-500 text-white px-4 py-2 rounded mb-4 mr-4 hover:bg-red-700"
 							onClick={modalExpense.openModal}>
 							Add Expense
 						</button>
@@ -178,7 +178,7 @@ function Expense() {
 					{expenses.length === 0 ? (
 						<p>Tidak ada data</p>
 					) : (
-						<ul className="overlow-container relative min-w-full pl-4 pr-0 md:pl-10 overflow-y-scroll max-h-[44rem] md:max-h-[50rem]">
+						<ul className="overlow-container min-w-full pl-4 pr-0 md:pl-10 overflow-y-scroll max-h-[40rem] md:max-h-[45rem]">
 							{expenses.map((expense, index) => (
 								<div className="relative" key={index}>
 									<span
@@ -195,7 +195,7 @@ function Expense() {
 											expense.category === "income"
 												? "border-l-4 border-green-400"
 												: "border-l-4 border-red-400"
-										} text-black px-4 md:pb-4 md:pt-5  rounded mb-4 mr-4 bg-slate-200`}>
+										} text-black px-4 md:pb-4 md:pt-5  rounded mb-4 mr-4 bg-slate-100`}>
 										<div className="flex justify-between items-center min-w-full">
 											<span
 												className={`font-bold  rounded-md px-2 py-1 text-white ${

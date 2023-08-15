@@ -59,7 +59,7 @@ function Note() {
 		<div className="p-4 pt-28" style={{ minHeight: "72vh" }}>
 			<div className="container mx-auto px-0 min-h-full min-w-full grid grid-cols-1 md:grid-cols-2">
 				<div className="flex justify-start flex-col items-center min-w-full">
-					<h2 className="text-xl font-bold mb-4">Notes</h2>
+					<h1 className="text-xl font-bold mb-4">Notes</h1>
 					<p className="hidden md:block lg:px-24 md:px-10 pb-5 text-gray-700">
 						You can add notes by clicking this green button, the
 						notes will automaticly saved. You can also delete the
@@ -86,7 +86,7 @@ function Note() {
 					{notes.length === 0 ? (
 						<p>Tidak ada data</p>
 					) : (
-						<div className="overlow-container  md:px-10 px-3 flex justify-start flex-col items-center min-w-full overflow-y-scroll max-h-[38rem] md:max-h-[50rem]">
+						<div className="overlow-container md:px-10 px-3 flex justify-start flex-col items-center min-w-full overflow-y-scroll max-h-[40rem] md:max-h-[45rem]">
 							{notes.map((note, index) => (
 								<div
 									key={index}

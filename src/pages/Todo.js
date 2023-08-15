@@ -68,6 +68,11 @@ function Todo() {
 		setEdit("");
 	}
 
+	// clear all todos
+	function clearHandler() {
+		setTodos([]);
+	}
+
 	return (
 		<div className="p-4 pt-28" style={{ minHeight: "72vh" }}>
 			<div className="container mx-auto px-0 min-h-full min-w-full grid grid-cols-1 md:grid-cols-2">
@@ -91,14 +96,21 @@ function Todo() {
 						<div className="flex justify-center items-center buttons mt-3">
 							<button
 								type="submit"
-								className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-2 rounded">
-								{edit.id ? "Save" : "Add"}
+								className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 ml-2 rounded">
+								{edit.id ? "Save Todo" : "New Todo"}
 							</button>
 							{edit.id && (
 								<button
 									onClick={cancelHandler}
 									className="bg-gray-400 hover:bg-gray-600 text-white font-bold py-2 px-4 ml-2 rounded">
 									Cancel
+								</button>
+							)}
+							{todos.length > 0 && (
+								<button
+									onClick={clearHandler}
+									className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 ml-2 rounded">
+									Clear All
 								</button>
 							)}
 						</div>
@@ -112,7 +124,7 @@ function Todo() {
 					{todos.length === 0 ? (
 						<p>Tidak ada data</p>
 					) : (
-						<ul className="overlow-container min-w-full px-4 md:px-10 overflow-y-scroll max-h-[44rem] md:max-h-[50rem]">
+						<ul className="overlow-container min-w-full px-4 md:px-10 overflow-y-scroll max-h-[40rem] md:max-h-[45rem]">
 							{todos.map((todo) => (
 								<li
 									key={todo.id}

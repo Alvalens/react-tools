@@ -61,7 +61,7 @@ html {
 .overlow-container::after {
   content: "";
   position: absolute;
-  bottom: -88px;
+  bottom: 40px;
   left: 0;
   right: 0;
   height: 70px;
