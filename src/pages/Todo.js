@@ -44,7 +44,6 @@ function Todo() {
 			setTodos(newTodoList);
 			setActivity("");
 			setEdit("");
-
 			return;
 		}
 		setTodos([...todos, { id: generateId(), activity }]);
@@ -113,7 +112,7 @@ function Todo() {
 					{todos.length === 0 ? (
 						<p>Tidak ada data</p>
 					) : (
-						<ul className="overlow-container min-w-full md:ps-10 overflow-y-scroll max-h-[44rem] md:max-h-[50rem]">
+						<ul className="overlow-container min-w-full px-4 md:px-10 overflow-y-scroll max-h-[44rem] md:max-h-[50rem]">
 							{todos.map((todo) => (
 								<li
 									key={todo.id}
