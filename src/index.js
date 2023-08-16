@@ -5,15 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 	const year = new Date().getFullYear();
 root.render(
+  <BrowserRouter>
   <React.StrictMode>
     <Navbar />
     <App />
     <Footer var={year} />
   </React.StrictMode>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

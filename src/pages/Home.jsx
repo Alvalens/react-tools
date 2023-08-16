@@ -1,9 +1,8 @@
 import logo from "../logo.svg";
 import "../App.css";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 function Home() {
-
-
 	return (
 		<div className="App bg-white dark:bg-gray-900">
 			<header className="App-header">
@@ -24,7 +23,7 @@ function Home() {
 						</div>
 						<p className="p-10 sm:p-5 text-black dark:text-white">
 							This is a simple tools project made with React.js.
-							There are 3 main tools in this project, namely:{" "}
+							There are 3 main tools in this project:{" "}
 							<span className="bg-blue-500 text-white rounded-md px-2 py-1 text-sm font-medium">
 								Todo List
 							</span>
@@ -39,7 +38,7 @@ function Home() {
 							. It's not a perfect app, but it's a good starting
 							point for learning React.js. This is my first
 							experience with React.js, and I hope you enjoy using
-							this app. If you encounter any bugs, I'll do my best
+							this app. If you encounter any bugs contact me!, I'll do my best
 							to fix them.
 						</p>
 						<div className="flex justify-center items-center pt-5">
@@ -55,8 +54,8 @@ function Home() {
 						<h1>Tools</h1>
 					</div>
 					<div className="container mx-auto px-0 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:px-4">
-						<a
-							href="todo"
+						<Link
+							to="todo"
 							className="flex justify-center items-center hover:scale-105 transition-transform mx-4">
 							<div className="bg-white rounded-t-lg md:rounded-lg shadow-xl p-5 min-w-full dark:bg-gray-600">
 								<div className="flex justify-center items-center">
@@ -73,10 +72,10 @@ function Home() {
 									</div>
 								</div>
 							</div>
-						</a>
+						</Link>
 
-						<a
-							href="note"
+						<Link
+							to="note"
 							className="flex justify-center items-center hover:scale-105 transition-transform mx-4">
 							<div className="bg-white md:rounded-lg shadow-xl p-5 min-w-full dark:bg-gray-600">
 								<div className="flex justify-center items-center">
@@ -93,10 +92,10 @@ function Home() {
 									</div>
 								</div>
 							</div>
-						</a>
+						</Link>
 
-						<a
-							href="expense-tracker"
+						<Link
+							to="/expense-tracker"
 							className="flex justify-center items-center hover:scale-105 transition-transform mx-4 md:col-span-2 xl:col-span-1 md:mt-10 xl:mt-0">
 							<div className="bg-white rounded-b-lg md:rounded-lg shadow-xl p-5 min-w-full dark:bg-gray-600">
 								<div className="flex justify-center items-center">
@@ -113,7 +112,7 @@ function Home() {
 									</div>
 								</div>
 							</div>
-						</a>
+						</Link>
 					</div>
 				</div>
 				{/* contact */}
