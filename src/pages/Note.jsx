@@ -56,14 +56,18 @@ function Note() {
     setNotes([]);
   };
 	return (
-		<div className="p-4 pt-28" style={{ minHeight: "72vh" }}>
+		<div className="p-4 pt-28" style={{ minHeight: "90vh" }}>
 			<div className="container mx-auto px-0 min-h-full min-w-full grid grid-cols-1 md:grid-cols-2">
 				<div className="flex justify-start flex-col items-center min-w-full">
-					<h1 className="text-xl font-bold mb-4">Notes</h1>
-					<p className="hidden md:block lg:px-24 md:px-10 pb-5 text-gray-700">
+					<h1 className="text-xl font-bold mb-4 text-black dark:text-white">
+						Notes
+					</h1>
+					<p className="hidden md:block lg:px-24 md:px-10 pb-5 text-gray-700 dark:text-white">
 						You can add notes by clicking this green button, the
 						notes will automaticly saved. You can also delete the
-						notes one by one by clicking the trash icon in each note or just clear all the notes by clicking the red button below.
+						notes one by one by clicking the trash icon in each note
+						or just clear all the notes by clicking the red button
+						below.
 					</p>
 					<div className="buttons">
 						<button
@@ -84,7 +88,9 @@ function Note() {
 						<h1 className="text-2xl font-bold mb-4">List</h1>
 					</div>
 					{notes.length === 0 ? (
-						<p>Tidak ada data</p>
+						<p className="text-black dark:text-white">
+							Tidak ada data
+						</p>
 					) : (
 						<div className="overlow-container md:px-10 px-3 flex justify-start flex-col items-center min-w-full overflow-y-scroll max-h-[40rem] md:max-h-[45rem]">
 							{notes.map((note, index) => (
@@ -93,7 +99,8 @@ function Note() {
 									className={`note-card shadow-md mb-4 p-2 border rounded min-w-full ${note.color} `}>
 									<div className="flex justify-between items-center">
 										<div className="buttons max-w-[4rem]">
-											<button className="bg-red-400 rounded py-4 px-1  hover:bg-red-700 mr-2 focus:outline-none focus:ring-2 focus:ring-red-100"
+											<button
+												className="bg-red-400 rounded py-4 px-1  hover:bg-red-700 mr-2 focus:outline-none focus:ring-2 focus:ring-red-100"
 												onClick={() =>
 													deleteNote(index)
 												}>
@@ -122,7 +129,8 @@ function Note() {
 													minHeight: "50px",
 													maxHeight: "300px",
 													resize: "vertical",
-                          fontFamily  : "Poppins, sans-serif",
+													fontFamily:
+														"Poppins, sans-serif",
 												}}></textarea>
 										</div>
 									</div>

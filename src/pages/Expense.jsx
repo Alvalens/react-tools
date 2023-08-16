@@ -130,7 +130,9 @@ function Expense() {
 		<div className="p-4 pt-28" style={{ minHeight: "75vh" }}>
 			<div className="container mx-auto px-0 min-h-full min-w-full grid grid-cols-1 md:grid-cols-2">
 				<div className="flex justify-start flex-col items-center min-w-full px-4 md:px-24">
-					<h1 className="text-2xl font-bold mb-4">Expense Tracker</h1>
+					<h1 className="text-2xl font-bold mb-4 text-black dark:text-white">
+						Expense Tracker
+					</h1>
 					{/* total balance */}
 					<div className="flex justify-center items-center w-full mb-8  bg-slate-300 rounded-md pt-5 pb-4 px-3">
 						<div className="flex flex-col justify-center items-center min-w-full">
@@ -173,10 +175,14 @@ function Expense() {
 
 				<div className="flex justify-start flex-col items-center md:border-l-2">
 					<div className="hidden md:block">
-						<h1 className="text-2xl font-bold mb-4">History</h1>
+						<h1 className="text-2xl font-bold mb-4 text-black dark:text-white">
+							History
+						</h1>
 					</div>
 					{expenses.length === 0 ? (
-						<p>Tidak ada data</p>
+						<p className="text-black dark:text-white">
+							Tidak ada data
+						</p>
 					) : (
 						<ul className="overlow-container min-w-full pl-4 pr-0 md:pl-10 overflow-y-scroll max-h-[40rem] md:max-h-[45rem]">
 							{expenses.map((expense, index) => (

@@ -74,12 +74,16 @@ function Todo() {
 	}
 
 	return (
-		<div className="p-4 pt-28" style={{ minHeight: "72vh" }}>
+		<div
+			className="p-4 pt-28  bg-white dark:bg-gray-900"
+			style={{ minHeight: "90vh" }}>
 			<div className="container mx-auto px-0 min-h-full min-w-full grid grid-cols-1 md:grid-cols-2">
 				<div className="flex justify-start flex-col items-center min-w-full">
-					<h1 className="text-2xl font-bold mb-4">Todo List</h1>
+					<h1 className="text-2xl font-bold mb-4 text-black dark:text-white">
+						Todo List
+					</h1>
 					<form
-						className="mb-4 min-w-full md:px-20"
+						className="mb-4 min-w-full px-3 md:px-20 "
 						onSubmit={handleSubmit}>
 						<input
 							type="text"
@@ -120,10 +124,14 @@ function Todo() {
 
 				<div className="flex justify-start flex-col items-center md:border-l-2">
 					<div className="hidden md:block">
-						<h1 className="text-2xl font-bold mb-4">List</h1>
+						<h1 className="text-2xl font-bold mb-4 text-black dark:text-white">
+							List
+						</h1>
 					</div>
 					{todos.length === 0 ? (
-						<p>Tidak ada data</p>
+						<p className="text-black dark:text-white">
+							Tidak ada data
+						</p>
 					) : (
 						<ul className="overlow-container min-w-full px-4 md:px-10 overflow-y-scroll max-h-[40rem] md:max-h-[45rem]">
 							{todos.map((todo) => (

@@ -1,12 +1,37 @@
 import "../css/Navbar.css";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
+
+	// dark mode
+	const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		if (prefersDarkMode) {
+			document.documentElement.classList.add("dark");
+			setDarkMode(false);
+		} else {
+			document.documentElement.classList.remove("dark");
+			setDarkMode(true);
+		}
+  }, []);
+
+	const toggleDarkMode = () => {
+		if (darkMode) {
+			document.documentElement.classList.add("dark");
+			setDarkMode(false);
+		} else {
+			document.documentElement.classList.remove("dark");
+			setDarkMode(true);
+		}
+	};
+	
 	// show and hide the navigation links when the hamburger icon is clicked
 	function showNav() {
 		const navLinks = document.getElementById("nav-links");
 		navLinks.classList.toggle("show");
 	}
-
 	return (
 		<nav className="bg-gray-800 fixed w-screen z-50 ">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,32 +49,45 @@ const Navbar = () => {
 
 					{/* Navigation links */}
 					<div className="hidden md:block">
-						<div className="ml-10 flex items-baseline space-x-4">
-							<a
-								href="/"
-								className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-								Home
-							</a>
-							<a
-								href="/about"
-								className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-								About
-							</a>
-							<a
-								href="/todo"
-								className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-								Todo
-							</a>
-							<a
-								href="/note"
-								className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-								Note
-							</a>
-							<a
-								href="/expense-tracker"
-								className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-								Expense Tracker
-							</a>
+						<div className="ml-10 flex justify-center items-center space-x-4">
+							<div className="ml-10 flex items-baseline space-x-4">
+								<a
+									href="/"
+									className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+									Home
+								</a>
+								<a
+									href="/about"
+									className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+									About
+								</a>
+								<a
+									href="/todo"
+									className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+									Todo
+								</a>
+								<a
+									href="/note"
+									className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+									Note
+								</a>
+								<a
+									href="/expense-tracker"
+									className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+									Expense Tracker
+								</a>
+							</div>
+							<div className="toggle-switch">
+								<label className="switch-label">
+									<input
+										type="checkbox"
+										className="checkbox"
+										checked={darkMode}
+										onChange={toggleDarkMode}
+									/>
+									<span className="slider"></span>
+								</label>
+							</div>
 						</div>
 					</div>
 
@@ -105,6 +143,18 @@ const Navbar = () => {
 							className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
 							Expense Tracker
 						</a>
+						{/* toggle dark mode */}
+						<div className="toggle-switch">
+							<label className="switch-label">
+								<input
+									type="checkbox"
+									className="checkbox"
+									checked={darkMode}
+									onChange={toggleDarkMode}
+								/>
+								<span className="slider"></span>
+							</label>
+							</div>
 					</div>
 				</div>
 			</div>
