@@ -83,6 +83,7 @@ function Todo() {
 						onSubmit={handleSubmit}>
 						<input
 							type="text"
+							name="todo"
 							value={activity}
 							placeholder="Insert here..."
 							onChange={(e) => setActivity(e.target.value)}
