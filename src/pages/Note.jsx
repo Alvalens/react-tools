@@ -85,7 +85,7 @@ function Note() {
 				</div>
 				<div className="flex justify-start flex-col items-center md:border-l-2">
 					<div className="hidden md:block">
-						<h1 className="text-2xl font-bold mb-4">List</h1>
+						<h1 className="text-2xl font-bold mb-4 text-black dark:text-white">Note List</h1>
 					</div>
 					{notes.length === 0 ? (
 						<p className="text-black dark:text-white">

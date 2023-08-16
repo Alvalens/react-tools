@@ -4,28 +4,38 @@ import { useState, useEffect } from "react";
 const Navbar = () => {
 
 	// dark mode
-	const [darkMode, setDarkMode] = useState(false);
+	const [darkMode, setDarkMode] = useState(
+		localStorage.getItem("darkMode") === "true" ? true : false
+	);
+
 
   useEffect(() => {
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-		if (prefersDarkMode) {
-			document.documentElement.classList.add("dark");
+		const prefersDarkMode = window.matchMedia(
+			"(prefers-color-scheme: dark)"
+		).matches;
+		const storedDarkMode = localStorage.getItem("darkMode");
+
+		if (storedDarkMode !== null) {
+			setDarkMode(storedDarkMode === "true");
+		} else if (prefersDarkMode) {
 			setDarkMode(false);
 		} else {
-			document.documentElement.classList.remove("dark");
 			setDarkMode(true);
 		}
   }, []);
 
-	const toggleDarkMode = () => {
+  useEffect(() => {
+		localStorage.setItem("darkMode", darkMode);
 		if (darkMode) {
 			document.documentElement.classList.add("dark");
-			setDarkMode(false);
 		} else {
 			document.documentElement.classList.remove("dark");
-			setDarkMode(true);
 		}
-	};
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+		setDarkMode(!darkMode);
+  };
 	
 	// show and hide the navigation links when the hamburger icon is clicked
 	function showNav() {
@@ -82,7 +92,7 @@ const Navbar = () => {
 									<input
 										type="checkbox"
 										className="checkbox"
-										checked={darkMode}
+										checked={!darkMode}
 										onChange={toggleDarkMode}
 									/>
 									<span className="slider"></span>

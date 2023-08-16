@@ -134,8 +134,8 @@ function Expense() {
 						Expense Tracker
 					</h1>
 					{/* total balance */}
-					<div className="flex justify-center items-center w-full mb-8  bg-slate-300 rounded-md pt-5 pb-4 px-3">
-						<div className="flex flex-col justify-center items-center min-w-full">
+					<div className="flex justify-center items-center w-full mb-8  bg-slate-300 rounded-md pt-5 pb-4 dark:bg-gray-600 px-3">
+						<div className="flex flex-col justify-center items-center min-w-full text-black dark:text-white">
 							<span className="text-sm">Your Balance</span>
 							<span className="text-2xl font-bold">
 								Rp. {total.toLocaleString("id-ID")}
@@ -201,7 +201,7 @@ function Expense() {
 											expense.category === "income"
 												? "border-l-4 border-green-400"
 												: "border-l-4 border-red-400"
-										} text-black px-4 md:pb-4 md:pt-5  rounded mb-4 mr-4 bg-slate-100`}>
+										} text-black px-4 md:pb-4 md:pt-5  rounded mb-4 mr-4 bg-slate-100 dark:bg-slate-500`}>
 										<div className="flex justify-between items-center min-w-full">
 											<span
 												className={`font-bold  rounded-md px-2 py-1 text-white ${
@@ -307,7 +307,7 @@ function Expense() {
 						id="date"
 						type="date"
 						placeholder="Date"
-						value={date}
+						value={date || new Date().toISOString().slice(0, 10)}
 						onChange={(e) => setDate(e.target.value)}
 						required
 					/>
@@ -359,7 +359,7 @@ function Expense() {
 						id="date"
 						type="date"
 						placeholder="Date"
-						value={date}
+						value={date || new Date().toISOString().slice(0, 10)}
 						onChange={(e) => setDate(e.target.value)}
 						required
 					/>

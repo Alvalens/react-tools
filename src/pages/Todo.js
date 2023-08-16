@@ -137,7 +137,7 @@ function Todo() {
 							{todos.map((todo) => (
 								<li
 									key={todo.id}
-									className="flex flex-row justify-between items-center p-2 mb-2 min-w-full border border-l-4 border-l-blue-500 rounded bg-slate-100">
+									className="flex flex-row justify-between items-center p-2 mb-2 min-w-full  border-l-4 border-l-blue-500 rounded bg-slate-100 dark:bg-slate-500 shadow">
 									<span className="text-start me-3">
 										{todo.activity}
 									</span>
