@@ -3,10 +3,16 @@ import App from "./App";
 import TodoList from "./pages/Todo";
 import Notes from "./pages/Note";
 import Expense from "./pages/Expense";
+import { BrowserRouter } from "react-router-dom";
+import Page404 from "./pages/404";
 
 // home component
 test("renders Home component without errors", () => {
-  render(<App />);
+  render(
+    <BrowserRouter>
+  <App />
+  </BrowserRouter>
+  );
   const header = screen.getByText(/About this project/i);
   expect(header).toBeInTheDocument();
 });
@@ -51,3 +57,17 @@ test("renders Expense component without errors", () => {
   const addIncomeButton = screen.getByRole("button", { name: /Income/i });
   expect(addIncomeButton).toBeInTheDocument();
 });
+
+// 404 component
+test("renders 404 component without errors", () => {
+  render(
+    <Page404/>
+  );
+
+  // test elements in 404 component
+  const page404Title = screen.getByText(/404/i);
+  expect(page404Title).toBeInTheDocument();
+  const page404Subtitle = screen.getByText(/Page Not Found/i);
+  expect(page404Subtitle).toBeInTheDocument();
+}
+);
