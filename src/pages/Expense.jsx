@@ -44,7 +44,7 @@ function Expense() {
 				id: nanoid(),
 				amount: amount,
 				description: description,
-				date: date,
+				date: date || new Date().toISOString().slice(0, 10),
 				category: category,
 			},
 		]);
