@@ -9,14 +9,13 @@ function Todo() {
 	);
 	const [msg, setMsg] = useState("");
 
-  useEffect(() => {
+	useEffect(() => {
 		try {
 			localStorage.setItem("todos", JSON.stringify(todos));
 		} catch (error) {
 			console.error("Error saving todos to local storage:", error);
 		}
-  }, [todos]);
-
+	}, [todos]);
 
 	function generateId() {
 		return Date.now();
@@ -25,7 +24,7 @@ function Todo() {
 	function handleSubmit(e) {
 		e.preventDefault();
 		if (!activity) {
-			return setMsg("tidak boleh kosong");
+			return setMsg("Tidak boleh kosong");
 		} else {
 			setMsg("");
 		}
@@ -34,6 +33,7 @@ function Todo() {
 			const newTodos = {
 				id: edit.id,
 				activity,
+				isComplete: edit.isComplete, // Preserve the completion status
 			};
 			const newTodo = todos.findIndex(function (todo) {
 				return todo.id === edit.id;
@@ -46,7 +46,7 @@ function Todo() {
 			setEdit("");
 			return;
 		}
-		setTodos([...todos, { id: generateId(), activity }]);
+		setTodos([...todos, { id: generateId(), activity, isComplete: false }]);
 		setActivity("");
 	}
 
@@ -71,6 +71,19 @@ function Todo() {
 	// clear all todos
 	function clearHandler() {
 		setTodos([]);
+	}
+
+	function toggleComplete(id) {
+		const newTodos = todos.map((todo) => {
+			if (todo.id === id) {
+				return {
+					...todo,
+					isComplete: !todo.isComplete,
+				};
+			}
+			return todo;
+		});
+		setTodos(newTodos);
 	}
 
 	return (
@@ -133,29 +146,62 @@ function Todo() {
 							Tidak ada data
 						</p>
 					) : (
-						<ul className="overlow-container min-w-full px-4 md:px-10 overflow-y-scroll max-h-[40rem] md:max-h-[45rem]">
+						// Inside your Todo component's return statement, update the rendering of the todo list
+						<ul className="overflow-container min-w-full px-4 md:px-10 overflow-y-scroll max-h-[40rem] md:max-h-[45rem]">
 							{todos.map((todo) => (
 								<li
 									key={todo.id}
-									className="flex flex-row justify-between items-center p-2 mb-2 min-w-full  border-l-4 border-l-blue-500 rounded bg-slate-100 dark:bg-slate-500 shadow">
-									<span className="text-start me-3">
+									className={`flex flex-row justify-between items-center p-2 mb-2 min-w-full border-l-4 ${
+										todo.isComplete
+											? "border-l-green-500 bg-green-100 dark:bg-green-600"
+											: "border-l-blue-500 bg-slate-100 dark:bg-slate-500"
+									} rounded shadow`}>
+									<span
+										className={`text-start me-3 ${
+											todo.isComplete
+												? "line-through"
+												: ""
+										}`}>
 										{todo.activity}
 									</span>
 									<div
-										className="buttons text-end"
-										style={{ minWidth: "100px" }}>
+										className="buttons flex flex-row justify-end items-center"
+										style={{ minWidth: "150px" }}>
 										<button
 											onClick={() => editHandler(todo)}
-											className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-3 rounded mr-2">
+											className={`bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-3 rounded mr-2 ${
+												todo.isComplete ? "hidden" : ""
+											}`}>
 											<i className="fa-solid fa-pen-to-square"></i>
 										</button>
 										<button
 											onClick={() =>
 												removeHandler(todo.id)
 											}
-											className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 rounded">
+											className={`bg-red-500 hover:bg-red-700 text-white font-bold rounded mr-2 ${
+												todo.isComplete
+													? "py-1 px-1"
+													: "py-2 px-3"
+											}`}>
 											<i className="fa-solid fa-trash"></i>
 										</button>
+										{!todo.isComplete ? (
+											<button
+												onClick={() =>
+													toggleComplete(todo.id)
+												}
+												className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded">
+												<i className="fa-solid fa-check"></i>
+											</button>
+										) : (
+											<button
+												onClick={() =>
+													toggleComplete(todo.id)
+												}
+												className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-1 rounded">
+												<i className="fa-solid fa-undo"></i>
+											</button>
+										)}
 									</div>
 								</li>
 							))}
