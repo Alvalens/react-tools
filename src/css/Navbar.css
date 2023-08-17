@@ -4,7 +4,6 @@
 @import 'tailwindcss/utilities';
 
 #nav-links {
-  @applymd: hidden;
   max-height: 0;
   overflow: hidden;
   opacity: 0;

@@ -9,6 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 	const year = new Date().getFullYear();
+  
 root.render(
   <BrowserRouter>
   <React.StrictMode>

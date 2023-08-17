@@ -3,46 +3,66 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-
 	// dark mode
 	const [darkMode, setDarkMode] = useState(
 		localStorage.getItem("darkMode") === "true" ? true : false
 	);
 
-
-  useEffect(() => {
+	useEffect(() => {
 		const prefersDarkMode = window.matchMedia(
 			"(prefers-color-scheme: dark)"
 		).matches;
 		const storedDarkMode = localStorage.getItem("darkMode");
 
 		if (storedDarkMode !== null) {
-			setDarkMode(storedDarkMode === "true");
+			setDarkMode(storedDarkMode === "true" ? true : false);
 		} else if (prefersDarkMode) {
-			setDarkMode(false);
-		} else {
 			setDarkMode(true);
+		} else {
+			setDarkMode(false);
 		}
-  }, []);
+	}, []);
 
-  useEffect(() => {
+	useEffect(() => {
 		localStorage.setItem("darkMode", darkMode);
 		if (darkMode) {
 			document.documentElement.classList.add("dark");
 		} else {
 			document.documentElement.classList.remove("dark");
 		}
-  }, [darkMode]);
+	}, [darkMode]);
 
-  const toggleDarkMode = () => {
+	const toggleDarkMode = () => {
 		setDarkMode(!darkMode);
-  };
+	};
+
+const [navOpen, setNavOpen] = useState(false);
+
+ const toggleNav = () => {
+		setNavOpen(!navOpen);
+ };
+
+ const closeNav = () => {
+		setNavOpen(false);
+ };
+
+  useEffect(() => {
+		const handleOutsideClick = (event) => {
+			if (
+				navOpen &&
+				!event.target.closest(".navbar-links") &&
+				!event.target.closest("#nav-toggle")
+			) {
+				closeNav();
+			}
+		};
+
+		document.addEventListener("click", handleOutsideClick);
+		return () => {
+			document.removeEventListener("click", handleOutsideClick);
+		};
+  }, [navOpen]);
 	
-	// show and hide the navigation links when the hamburger icon is clicked
-	function showNav() {
-		const navLinks = document.getElementById("nav-links");
-		navLinks.classList.toggle("show");
-	}
 	return (
 		<nav className="bg-gray-800 fixed w-screen z-50 ">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -106,7 +126,7 @@ const Navbar = () => {
 					<div className=" md:hidden ">
 						<button
 							id="nav-toggle"
-							onClick={showNav}
+							onClick={toggleNav}
 							className="text-gray-400 hover:text-white focus:outline-none focus:text-white"
 							aria-label="Toggle navigation">
 							<svg
@@ -127,7 +147,9 @@ const Navbar = () => {
 				</div>
 
 				{/* Responsive Navigation */}
-				<div id="nav-links" className="">
+				<div
+					id="nav-links"
+					className={`md:hidden nav-links ${navOpen ? "show" : ""}`}>
 					<div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
 						<Link
 							to="/"

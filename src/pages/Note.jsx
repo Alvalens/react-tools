@@ -56,7 +56,9 @@ function Note() {
     setNotes([]);
   };
 	return (
-		<div className="p-4 pt-28" style={{ minHeight: "90vh" }}>
+		<div
+			className="p-4 pt-28 bg-white dark:bg-gray-900"
+			style={{ minHeight: "90vh" }}>
 			<div className="container mx-auto px-0 min-h-full min-w-full grid grid-cols-1 md:grid-cols-2">
 				<div className="flex justify-start flex-col items-center min-w-full">
 					<h1 className="text-xl font-bold mb-4 text-black dark:text-white">
@@ -85,7 +87,9 @@ function Note() {
 				</div>
 				<div className="flex justify-start flex-col items-center md:border-l-2">
 					<div className="hidden md:block">
-						<h1 className="text-2xl font-bold mb-4 text-black dark:text-white">Note List</h1>
+						<h1 className="text-2xl font-bold mb-4 text-black dark:text-white">
+							Note List
+						</h1>
 					</div>
 					{notes.length === 0 ? (
 						<p className="text-black dark:text-white">

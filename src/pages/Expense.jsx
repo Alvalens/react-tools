@@ -127,7 +127,9 @@ function Expense() {
 	const modalEdit = useModal();
 
 	return (
-		<div className="p-4 pt-28" style={{ minHeight: "75vh" }}>
+		<div
+			className="p-4 pt-28 bg-white dark:bg-gray-900"
+			style={{ minHeight: "75vh" }}>
 			<div className="container mx-auto px-0 min-h-full min-w-full grid grid-cols-1 md:grid-cols-2">
 				<div className="flex justify-start flex-col items-center min-w-full px-4 md:px-24">
 					<h1 className="text-2xl font-bold mb-4 text-black dark:text-white">
@@ -201,7 +203,7 @@ function Expense() {
 											expense.category === "income"
 												? "border-l-4 border-green-400"
 												: "border-l-4 border-red-400"
-										} text-black px-4 md:pb-4 md:pt-5  rounded mb-4 mr-4 bg-slate-100 dark:bg-slate-500`}>
+										} text-black px-4 md:pb-4 pt-2 md:pt-6  rounded mb-4 mr-4 bg-slate-100 dark:bg-slate-500`}>
 										<div className="flex justify-between items-center min-w-full">
 											<span
 												className={`font-bold  rounded-md px-2 py-1 text-white ${
