@@ -1,70 +1,71 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Tools
 
-## Available Scripts
+![visitor badge](https://visitor-badge.laobi.icu/badge?page_id=aleph-discord-bot.visitor-badge)
 
-In the project directory, you can run:
+React Tools is a project that provides a collection of tools and components built using popular technologies like React, React Router, and TailwindCSS. Also this project implement browser local storage so it didnt need any databases. React Tools offers features such as a Todo List, Note-taking, and Expense Tracking. This project is also my first react project. If you find any bugs please contact me, I'll try my best to fix it.
 
-### `npm start`
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* **Todo List:** Manage your tasks with a simple and intuitive todo list.
+* **Note-taking:** Take notes and organize your thoughts efficiently.
+* **Expense Tracking:** Keep track of your expenses and manage your finances.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
 
-### `npm run build`
+   ```git
+   https://github.com/Alvalens/react-tools.git
+   ```
+2. Navigate to the project directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```shell
+   cd react-tools
+   ```
+3. Install dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```
+   npm install
+   ```
+4. Start the development server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```shell
+   npm start
+   ```
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+You can access these menu on home page on the navbar, feauture section and footer. You can also access those feauture by direclt type the url `/todo` `/note` and `/expense-tracker`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Todo List
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* add new todo list: You can add new todo by pressing the new todo button
+* Edit existing todo list: Click the edit button on the right side of todo to modify it.
+* Remove todo: Use the delete button to remove a todo from the list.
+* Mark as complete: You can mark or unmark todo as complete by clicking the blue check button on each todo.
+* Clear Todo: Selete all of your todos
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Note
 
-## Learn More
+* Create new notes: You can create new notes by clicking new note button, you can start writing note after creating one.
+* Edit notes: Edit your by directly type in note card to update information.
+* Delete notes: Remove notes that are no longer needed by clicking the trash icon.
+* Clear Notes: Delete all of your notes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Expense tracker
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Add new expense or income: Record your expenses or income by adding details.
+* Edit existing expenses or income: Edit the details of your recorded expenses or income.
+* Delete expenses or income: Remove expenses from your tracker.
+* Total balance: Auto calculated based on your expense and income.
 
-### Code Splitting
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contributions are welcome! If you find any issues or have suggestions, feel free to open an issue or submit a pull request.
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License seethe [LICENSE](LICENSE) file for details.
